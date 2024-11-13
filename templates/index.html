@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 1000px;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .pdf-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .pdf-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .pdf-item:hover {
+            transform: translateY(-5px);
+        }
+        .pdf-item h2 {
+            font-size: 1.5rem;
+            color: #555;
+        }
+        .pdf-item p {
+            font-size: 1rem;
+            color: #777;
+            margin: 10px 0;
+        }
+        .pdf-item a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .pdf-item a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the PDF Shop</h1>
+        <div class="pdf-list">
+            {% for pdf in pdf_files %}
+                <div class="pdf-item">
+                    <h2>{{ pdf.name }}</h2>
+                    <p>Price: ${{ pdf.price }}</p>
+                    <a href="{{ url_for('buy_pdf', filename=pdf.filename) }}">Buy Now</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
