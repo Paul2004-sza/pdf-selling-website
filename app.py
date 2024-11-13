@@ -9,8 +9,8 @@ stripe.api_key = "sk_test_51Q4MrsGO7zMrqrolrf4oCilbyrZQyJBxCOkgtlej42zuOy6p4H4aA
 
 # List of available PDFs with prices (you can customize this)
 pdf_files = [
-    {"name": "Sample PDF 1", "price": 9.99, "filename": "...Sut Zaw Aung ID 240702404185.pdf"},
-    {"name": "Sample PDF 2", "price": 14.99, "filename": "LAB 2401 Sec 351 GUIsza.pdf"},
+    {"name": "Sample PDF 2", "price": 14.99, "filename": "new_pdf_for_sale.pdf"},
+{"name": "Another PDF", "price": 9.99, "filename": "another_pdf_for_sale.pdf"},
 ]
 
 
